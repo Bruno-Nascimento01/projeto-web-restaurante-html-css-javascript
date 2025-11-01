@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    
+    <title>teste</title>
+</head>
+<body>
+<aside>
+        <nav>
+        <ul>
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+            <li><a href="trabalho.html">Trabalhe Conosco</a></li>
+            <li><a href="reserva.html">Reserva</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="pedido.html">Faça seu Pedido</a></li>
+        </ul>
+    </nav>
+    </aside>
+
+
+    <input type="radio" class="slide-controller" name="slide" checked />
+<input type="radio" class="slide-controller" name="slide" />
+<input type="radio" class="slide-controller" name="slide" />
+
+
+<div class="slide-show" >
+  <ul class="slides-list" >
+    <li class="slide" >
+      <img src="Assets/imagens/Reserva1.jpg" />
+    </li>
+    <li class="slide" >
+      <img src="Assets/imagens/Reserva2.jpeg" />
+    </li>
+    <li class="slide" >
+      <img src="Assets/imagens/Reserva3.jpeg"/>
+  </ul>
+</div>
+<br>
+
+
+<div class="formulario">
+<form>
+
+    <p style="text-align: center, "><p style="font-size: 20px;"><strong>Faça uma reserva com a gente</strong></p></p>
+    <br>
+    
+    <label for="nome completo">Nome Completo: </label>
+    <input type="text" id="nome" name="nome" required><br><br>
+    
+    <label for="tel">Telefone: </label>
+    <input type="tel" id="tel" name="tel"><br><br>
+    
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="date">Data da Reserva: </label>
+    <input type="date" id="date" name="date"><br><br>
+
+    <label for="message">Descreva a ocasião da reserva: </label>
+    <textarea id="message" name="message" rows="1" cols="20"></textarea><br>
+
+    <input type="submit" value="Enviar">
+  
+</form>
+</div>
+
+
+
+

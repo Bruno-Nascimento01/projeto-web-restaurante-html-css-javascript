@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Faça seu Pedido - Bistrô Estação 311</title>
+</head>
+<body>
+    <header>
+        <div style="text-align: center; padding: 1rem;">
+            <h1>🍔 Bistrô Estação 311</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cardapio.html">Cardápio</a></li>
+            <li><a href="trabalho.html">Trabalhe Conosco</a></li>
+            <li><a href="reserva.html">Reserva</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="pedido.html">Faça seu Pedido</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section style="background: linear-gradient(135deg, #FF8C00, #E67E00); color: white; text-align: center; padding: 3rem 2rem; border-radius: 10px; margin: 2rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">🍽️ Monte seu Pedido</h1>
+            <p style="font-size: 1.3rem;">Escolha seus pratos favoritos</p>
+        </section>
+
+        <section style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
+            <h2 style="text-align: center; color: #FF8C00; margin-bottom: 2rem; font-size: 2rem;">Nossos Pratos</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div class="product-card">
+                    <img src="Assets/imagens/arancini.jpg" alt="Arancini" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Arancini</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 28,90</p>
+                    <button onclick="showSuccessOverlay('Arancini adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Conchiglone.jpg" alt="Conchiglone" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Conchiglone</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 42,90</p>
+                    <button onclick="showSuccessOverlay('Conchiglone adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Contra.jpg" alt="Contra Filé" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Contra Filé</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 58,90</p>
+                    <button onclick="showSuccessOverlay('Contra Filé adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Drink.jpg" alt="Drink Especial" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Drink Especial</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 18,90</p>
+                    <button onclick="showSuccessOverlay('Drink Especial adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Feijoada (14).jpg" alt="Feijoada" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Feijoada</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 38,90</p>
+                    <button onclick="showSuccessOverlay('Feijoada adicionada!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/iscas frango.jpg" alt="Isca de Frango" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Isca de Frango</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 32,90</p>
+                    <button onclick="showSuccessOverlay('Isca de Frango adicionada!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/macarrao ao sugo.jpg" alt="Macarrão ao Sugo" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Macarrão ao Sugo</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 35,90</p>
+                    <button onclick="showSuccessOverlay('Macarrão ao Sugo adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Quibe.jpg" alt="Quibe" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Quibe</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 24,90</p>
+                    <button onclick="showSuccessOverlay('Quibe adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Risoto com polvo.jpg" alt="Risoto com Polvo" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Risoto com Polvo</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 68,90</p>
+                    <button onclick="showSuccessOverlay('Risoto com Polvo adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Salmao toscana.jpg" alt="Salmão Toscana" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Salmão Toscana</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 62,90</p>
+                    <button onclick="showSuccessOverlay('Salmão Toscana adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/strogonoff.jpg" alt="Strogonoff" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Strogonoff</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 45,90</p>
+                    <button onclick="showSuccessOverlay('Strogonoff adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Tilapia .jpg" alt="Tilápia" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Tilápia</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 48,90</p>
+                    <button onclick="showSuccessOverlay('Tilápia adicionada!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Hamburguer smash.png" alt="Hamburger Smash" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Hamburger Smash</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 36,90</p>
+                    <button onclick="showSuccessOverlay('Hamburger Smash adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Filé a parmegiana.png" alt="Filé à Parmegiana" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Filé à Parmegiana</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 54,90</p>
+                    <button onclick="showSuccessOverlay('Filé à Parmegiana adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Bife Acebolado.png" alt="Bife Acebolado" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Bife Acebolado</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 42,90</p>
+                    <button onclick="showSuccessOverlay('Bife Acebolado adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Petit Gateau.png" alt="Petit Gateau" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Petit Gateau</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 22,90</p>
+                    <button onclick="showSuccessOverlay('Petit Gateau adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="Assets/imagens/Deluxe burger.png" alt="Deluxe Burger" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                    <h3 style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;">Deluxe Burger</h3>
+                    <p style="color: #FF8C00; font-size: 1.3rem; font-weight: bold; margin: 0.5rem 0;">R$ 44,90</p>
+                    <button onclick="showSuccessOverlay('Deluxe Burger adicionado!')" style="background: #FF8C00; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; width: 100%; cursor: pointer; font-weight: 600; transition: all 0.3s;">Adicionar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: #000; color: white; text-align: center; padding: 2rem; margin-top: 3rem;">
+        <p>© 2025 Bistrô Estação 311 - Culinária tradicional, feita com cuidado.</p>
+        <p>📍 Rua Martins, 311 - São Bernardo do Campo | 📞 (11) 1234-5678</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

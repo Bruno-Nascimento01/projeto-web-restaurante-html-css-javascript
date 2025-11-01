@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/estilo.css" />
+  <title>Dashboard do Restaurante</title>
+
+    <nav>
+    <ul>
+      <li><a href="/index.html">Início</a></li>
+      <li><a href="/sobre.html">Sobre</a></li>
+      <li><a href="/cardapio.html">Cardápio</a></li>
+      <li><a href="/trabalho.html">Trabalhe Conosco</a></li>
+      <li><a href="/reserva.html">Reserva</a></li>
+      <li><a href="/cadastro.html">Cadastro</a></li>
+    </ul>
+  </nav>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    canvas {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dashboard do Restaurante</h1>
+
+  <!-- Gráfico 1: Ganhos Mensais -->
+  <h2>Ganhos Mensais</h2>
+  <canvas id="graficoBarras" width="700" height="400"></canvas>
+
+  <!-- Gráfico 2: Faturamento por Tipo de Prato -->
+  <h2>Faturamento por Tipo de Prato</h2>
+  <canvas id="graficoPizza" width="400" height="400"></canvas>
+
+  <!-- Gráfico 3: Clientes por Dia da Semana -->
+  <h2>Clientes por Dia da Semana</h2>
+  <canvas id="graficoLinhas" width="700" height="400"></canvas>
+
+  <script>
+    // === Gráfico de Barras: Ganhos Mensais ===
+    const barras = document.getElementById("graficoBarras").getContext("2d");
+    const ganhos = [
+      { mes: "Jan", valor: 15000 },
+      { mes: "Fev", valor: 18000 },
+      { mes: "Mar", valor: 17000 },
+      { mes: "Abr", valor: 19000 },
+      { mes: "Mai", valor: 22000 },
+      { mes: "Jun", valor: 21000 }
+    ];
+    const maiorGanho = Math.max(...ganhos.map(g => g.valor));
+    const alturaMax = 250;
+    const larguraBarra = 60;
+    const espacamento = 30;
+    const margem = 50;
+
+    ganhos.forEach((g, i) => {
+      const x = margem + i * (larguraBarra + espacamento);
+      const h = (g.valor / maiorGanho) * alturaMax;
+      const y = 360 - h;
+      barras.fillStyle = "#4CAF50";
+      barras.fillRect(x, y, larguraBarra, h);
+      barras.fillStyle = "#000";
+      barras.fillText(g.mes, x + 10, 380);
+      barras.fillText(`R$${g.valor}`, x - 5, y - 10);
+    });
+
+    barras.beginPath();
+    barras.moveTo(margem, 360);
+    barras.lineTo(650, 360);
+    barras.stroke();
+
+    // === Gráfico de Pizza: Faturamento por Tipo de Prato ===
+    const pizza = document.getElementById("graficoPizza").getContext("2d");
+    const pratos = [
+      { nome: "Pratos Principais", valor: 40000, cor: "#FF6384" },
+      { nome: "Bebidas", valor: 15000, cor: "#36A2EB" },
+      { nome: "Sobremesas", valor: 10000, cor: "#FFCE56" }
+    ];
+    const total = pratos.reduce((acc, p) => acc + p.valor, 0);
+    let anguloInicio = 0;
+
+    pratos.forEach(p => {
+      const angulo = (p.valor / total) * 2 * Math.PI;
+      pizza.beginPath();
+      pizza.moveTo(200, 200);
+      pizza.arc(200, 200, 150, anguloInicio, anguloInicio + angulo);
+      pizza.closePath();
+      pizza.fillStyle = p.cor;
+      pizza.fill();
+      anguloInicio += angulo;
+    });
+
+    // Legenda
+    let lx = 20, ly = 370;
+    pratos.forEach(p => {
+      pizza.fillStyle = p.cor;
+      pizza.fillRect(lx, ly, 10, 10);
+      pizza.fillStyle = "#000";
+      pizza.font = "14px Arial";
+      pizza.fillText(p.nome, lx + 15, ly + 10);
+      lx += 130;
+    });
+
+    // === Gráfico de Linhas: Clientes por Dia da Semana ===
+    const linha = document.getElementById("graficoLinhas").getContext("2d");
+    const clientes = [
+      { dia: "Seg", qtd: 120 },
+      { dia: "Ter", qtd: 140 },
+      { dia: "Qua", qtd: 180 },
+      { dia: "Qui", qtd: 160 },
+      { dia: "Sex", qtd: 220 },
+      { dia: "Sáb", qtd: 300 },
+      { dia: "Dom", qtd: 280 }
+    ];
+
+    const maxClientes = Math.max(...clientes.map(c => c.qtd));
+    const largura = 80;
+    const offsetX = 60;
+    const baseY = 350;
+
+    // Linhas
+    linha.beginPath();
+    linha.moveTo(offsetX, baseY - (clientes[0].qtd / maxClientes) * 250);
+    clientes.forEach((c, i) => {
+      const x = offsetX + i * largura;
+      const y = baseY - (c.qtd / maxClientes) * 250;
+      linha.lineTo(x, y);
+    });
+    linha.strokeStyle = "#FF5722";
+    linha.lineWidth = 2;
+    linha.stroke();
+
+    // Pontos e textos
+    clientes.forEach((c, i) => {
+      const x = offsetX + i * largura;
+      const y = baseY - (c.qtd / maxClientes) * 250;
+      linha.fillStyle = "#FF5722";
+      linha.beginPath();
+      linha.arc(x, y, 4, 0, 2 * Math.PI);
+      linha.fill();
+      linha.fillStyle = "#000";
+      linha.fillText(c.dia, x - 10, baseY + 15);
+      linha.fillText(`${c.qtd}`, x - 10, y - 10);
+    });
+
+    // Eixo X
+    linha.beginPath();
+    linha.moveTo(offsetX, baseY);
+    linha.lineTo(offsetX + (clientes.length - 1) * largura, baseY);
+    linha.strokeStyle = "#333";
+    linha.stroke();
+  </script>
+  
+  <body style="background-color:orangered;"></body>
+
+</body>
+</html>
+
