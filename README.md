@@ -179,6 +179,7 @@ trabalho
 
 ________________________________________
 9. Dados dos Integrantes do Grupo
+
 ●	Integrante 1: Bruno Nascimento Ribeiro Oliveira-
 
 ●	Integrante 2: Geovanna Antunes Correa
